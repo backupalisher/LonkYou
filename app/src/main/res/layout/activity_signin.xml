@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context=".ui.singin.SigninActivity">
+    <RelativeLayout
+        android:id="@+id/closeBlueLayout"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/close_blue"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            app:srcCompat="@drawable/ic_close_blue"
+            android:background="#fff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:layout_below="@id/closeBlueLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_logo_linkyou"
+            android:background="#fff"
+            android:layout_width="198dp"
+            android:layout_height="33dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Вход" />
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Регистрация" />
+        </android.support.design.widget.TabLayout>
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/emailEdit"
+                android:hint="E-mail"
+                android:inputType="textEmailAddress"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/circle_button_gray"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:layout_below="@id/emailEdit"
+                android:id="@+id/passwordEdit"
+                android:hint="Пароль"
+                android:inputType="textPassword"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/circle_button_gray"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_below="@id/passwordEdit"
+                android:layout_centerHorizontal="true"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:background="@drawable/circle_button_blue"
+                android:text="Войти"
+                android:layout_marginBottom="40dp"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/text"
+                android:layout_below="@id/button"
+                android:text="Забыли пароль?"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:visibility="gone"
+                android:layout_centerHorizontal="true"
+                android:clickable="true"
+                android:linksClickable="true"
+                android:id="@+id/rules"
+                android:textColor="@color/colorPrimary"
+                android:layout_below="@id/text"
+                android:text="условиями использования и полтитикой безопасности"
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:id="@+id/separator"
+                android:layout_below="@id/rules"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/separator" />
+            <TextView
+                android:id="@+id/text3"
+                android:layout_below="@id/separator"
+                android:layout_centerHorizontal="true"
+                android:text="Вход через соцсеть"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:id="@+id/socialLayout"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal"
+                android:layout_below="@id/text3"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp">
+                <ImageButton
+                    android:id="@+id/fbBtn"
+                    android:background="#fff"
+                    tools:layout_editor_absoluteX = "11dp"
+                    tools:layout_editor_absoluteY = "225dp"
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/ic_facebook_color1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    tools:ignore="VectorDrawableCompat" />
+                <ImageButton
+                    android:id="@+id/vkBtn"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="centerInside"
+                    android:layout_gravity="center_vertical"
+                    android:background="#fff"
+                    tools:layout_editor_absoluteX = "11dp"
+                    tools:layout_editor_absoluteY = "225dp"
+                    app:srcCompat="@drawable/ic_vk_color1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    tools:ignore="VectorDrawableCompat" />
+                <ImageButton
+                    android:id="@+id/okBtn"
+                    android:scaleType="centerInside"
+                    android:layout_gravity="center_vertical"
+                    android:background="#fff"
+                    tools:layout_editor_absoluteX = "11dp"
+                    tools:layout_editor_absoluteY = "225dp"
+                    app:srcCompat="@drawable/ic_ok_color1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    tools:ignore="VectorDrawableCompat" />
+            </LinearLayout>
+            <TextView
+                android:layout_below="@+id/socialLayout"
+                android:gravity="center_horizontal"
+                android:text="Мы не делаем публикации в ваш аккаунт"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

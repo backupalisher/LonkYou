@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#333333"
+    android:id="@+id/mainLayoutPhotoActivity"
+    tools:context=".ui.photos.PhotoActivity">
+
+    <ViewFlipper
+        android:id="@+id/viewFlipper1"
+        android:layout_marginBottom="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ViewFlipper>
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="0"
+            android:textColor="#fff"
+            android:drawableLeft="@drawable/ic_heart2"
+            android:drawablePadding="10dp"
+            android:layout_marginEnd="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/commentTextView"
+            android:textColor="#fff"
+            android:drawableLeft="@drawable/ic_comments2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text=". . ."
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:layout_marginStart="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</RelativeLayout>

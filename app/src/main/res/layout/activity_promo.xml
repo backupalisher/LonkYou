@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#007ce0"
+    tools:context=".ui.singin.PromoActivity">
+
+    <RelativeLayout
+        android:id="@+id/headLayout"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/v18"
+            android:text="18+"
+            android:textColor="#fff"
+            android:textAlignment="textEnd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:layout_marginTop="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                app:srcCompat="@drawable/ic_logo"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                tools:ignore="VectorDrawableCompat" />
+            <TextView
+                android:textColor="#fff"
+                android:text="@string/promoHeadText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/headLayout"
+        android:layout_above="@id/bottomLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_gravity="center_vertical"
+            app:srcCompat="@drawable/ic_couple_love"
+            android:scaleType="centerInside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="VectorDrawableCompat" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottomLayout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="#fff"
+                android:textAlignment="center"
+                android:text="@string/promo_linkyou"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/regButton"
+                android:text="Регистрация"
+                android:textColor="#fff"
+                android:textAllCaps="false"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/circle_button_green"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/signButton"
+                android:text="Войти"
+                android:textColor="#fff"
+                android:textAllCaps="false"
+                android:background="@drawable/circle_button"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

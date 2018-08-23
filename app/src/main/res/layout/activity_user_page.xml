@@ -1,0 +1,1239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.users.UserPageActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/UserimageView"
+                    android:layout_width="match_parent"
+                    android:scaleType="centerCrop"
+                    android:layout_height="380dp" />
+
+                <ImageView
+                    android:id="@+id/gradient"
+                    android:layout_alignBottom="@id/UserimageView"
+                    android:layout_width="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_gradient"
+                    android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:layout_alignBottom="@id/gradient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/UserNameHeadText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:textStyle="bold"
+                        android:textColor="#fff"
+                        android:text="Дмитрий, 26" />
+
+                    <TextView
+                        android:id="@+id/professionTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Юрист, Сфера услуг"
+                        android:textStyle="bold"
+                        android:textColor="#fff"
+                        android:layout_below="@id/UserNameHeadText" />
+
+                    <View
+                        android:id="@+id/headLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#7b7b7b"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_below="@id/professionTextView"/>
+
+                    <LinearLayout
+                        android:id="@+id/HeadEyeMyAccountLinear"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical"
+                        android:layout_below="@id/headLine">
+                        <TextView
+                            android:drawableLeft="@drawable/ic_eye"
+                            android:drawablePadding="10dp"
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="10dp"
+                            android:textStyle="bold"
+                            android:textColor="#fff"
+                            android:text="Как видят мою страницу" />
+                        <TextView
+                            android:layout_below="@id/textView4"
+                            android:drawableLeft="@drawable/ic_photo"
+                            android:drawablePadding="10dp"
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textColor="#fff"
+                            android:text="Изменить главное фото" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteY="360dp">
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_weight="4"
+                    android:background="@drawable/circle_button_cian"
+                    android:text="Поднять анкету"
+                    android:drawablePadding="-10dp"/>
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_weight="4"
+                    android:text="На главную"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingLeft="20dp"
+                    android:drawableLeft="@drawable/ic_crown"
+                    android:background="@drawable/circle_button_cian"
+
+                    android:drawablePadding="-10dp"/>
+
+                <ImageButton
+                    android:src="@drawable/ic_star_blue"
+                    android:background="@drawable/circle_button_cian"
+                    android:id="@+id/button4"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="0.1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/ic_heart" />
+
+                <TextView
+                    android:id="@+id/likesCountTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="531 лайк" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/ic_photo" />
+
+                <TextView
+                    android:id="@+id/photosCountTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8 фото" />
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/ic_geo" />
+
+                <TextView
+                    android:id="@+id/CityNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Москва" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#7b7b7b"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:alignItems="center"
+                app:flexWrap="wrap">
+
+                <TextView
+                    android:id="@+id/zodiacTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/circle_button_gray"
+                    android:padding="10dp"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/nationalityTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/circle_button_gray"
+                    android:padding="10dp"
+                    android:text="Русская"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/lookingTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/circle_button_gray"
+                    android:padding="10dp"
+                    android:text="Ищу Женщину от 20 до 35"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/religionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/circle_button_gray"
+                    android:padding="10dp"
+                    android:text="Ислам"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/goalTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/circle_button_gray"
+                    android:drawableStart="@drawable/ic_comments2"
+                    android:drawablePadding="5dp"
+                    android:padding="10dp"
+                    android:text="Дружба"
+                    android:visibility="gone"/>
+            </com.google.android.flexbox.FlexboxLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#e9e9f5" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
+                android:background="#e9e9f5" />
+
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/photosCountTextView2"
+                    android:text=""
+                    android:drawableStart="@drawable/ic_photo"
+                    android:drawablePadding="5dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:id="@+id/photosListLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#e9e9f5" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
+                android:background="#e9e9f5" />
+
+            <LinearLayout
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:indeterminate="false"
+                        android:progressDrawable="@drawable/circle_progress_bar"
+                        android:background="@drawable/circle_shape"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:max="100"
+                        android:progress="65" />
+
+                    <TextView
+                        android:text="65%"
+                        android:id="@+id/txtProgress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:layout_marginStart="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="Рейтинг"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="Понравилась 5447 из 10к"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:background="#e9e9f5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:src="@drawable/ic_pilot"
+                        android:id="@+id/blogAccountImageView"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp" />
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/blogAccountImageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="Дмитрий, 26"
+                            android:textStyle="bold"
+                            android:id="@+id/blogAccountNameTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:text="24 ноября, 21:30"
+                            android:textColor="#9f9faa"
+                            android:id="@+id/blogDatesTextView"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <TextView
+                        android:text=". . ."
+                        android:textStyle="bold"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/blogText"
+                    android:text="Съездил с друзьями в горы. В будущем планирую проводить отпуск только так. Представьте себе: просыпаешься, выходишь из палатки и вдыхаешь свежайший воздух, а взглянув вниз, кажется, видишь целый мир."
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/blog_img"
+                    android:scaleType="fitCenter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="TODO" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#e9e9f5" />
+
+                <RelativeLayout
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/blogLikesTextView"
+                        android:drawableLeft="@drawable/ic_heart2"
+                        android:drawablePadding="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="10 лайков"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:drawableLeft="@drawable/ic_comments2"
+                        android:drawablePadding="5dp"
+                        android:layout_toRightOf="@id/blogLikesTextView"
+                        android:text="2 комментария"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:drawableLeft="@drawable/ic_eye"
+                        android:drawablePadding="5dp"
+                        android:text="95"
+                        android:layout_alignParentEnd="true"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/blogAllButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/circle_button_cian"
+                    style="?android:textAppearanceSmall"
+                    android:drawablePadding="-10dp"
+                    android:textAllCaps="false"
+                    android:text="Все записи" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#e9e9f5" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
+                android:background="#e9e9f5" />
+
+            <LinearLayout
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:drawableLeft="@drawable/ic_person_green"
+                        android:drawablePadding="5dp"
+                        android:text="Обо мне"
+                        android:textStyle="bold"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/ic_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/aboutTextView"
+                    android:text="Люблю красивую музыку и прогулки на свежем воздухе, катаюсь с друзьями на скейтах, хажу на хокей а по выходным обязательно хожу в любимый кинотеатр."
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TableLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TableRow
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:id="@+id/textView7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="Рост" />
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:id="@+id/heightTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="180 см" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="Состоите \nли в отношениях" />
+
+                        <TextView
+                            android:id="@+id/relationshipTextView"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Нет" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:id="@+id/textView1"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ориентация" />
+
+                        <TextView
+                            android:id="@+id/orientationTextView"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Гетеро" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Дети" />
+
+                        <TextView
+                            android:id="@+id/childrenTextView"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Нет" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Отношение к курению" />
+
+                        <TextView
+                            android:id="@+id/smokingTextView"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Не курю, отношусь нейтрально" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:id="@+id/textView13"
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Отношение к алкоголю" />
+
+                        <TextView
+                            android:id="@+id/alcoholTextView"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Не пью" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#e9e9f5" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
+                android:background="#e9e9f5" />
+
+            <LinearLayout
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:drawableLeft="@drawable/ic_star_blue"
+                        android:drawablePadding="5dp"
+                        android:text="Интересы"
+                        android:textStyle="bold"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/ic_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/interestsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:alignItems="center"
+                    app:flexWrap="wrap">
+
+                </com.google.android.flexbox.FlexboxLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#e9e9f5" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
+                android:background="#e9e9f5" />
+
+            <LinearLayout
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:drawableLeft="@drawable/ic_apple"
+                        android:drawablePadding="5dp"
+                        android:text="Образование"
+                        android:textStyle="bold"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/ic_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+                <TableLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TableRow
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:id="@+id/textView15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="Образование" />
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:id="@+id/education_typeTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Высшее" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:id="@+id/textView17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="Название учебного заведения" />
+
+                        <TextView
+                            android:id="@+id/institutionTextView"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Финансовая академия при правительстве РФ" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:id="@+id/textView19"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Специальность" />
+
+                        <TextView
+                            android:id="@+id/specialityTextView"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Экономист" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:id="@+id/textView21"
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Знание языков" />
+
+                        <TextView
+                            android:id="@+id/languagesTextView"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#e9e9f5" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
+                android:background="#e9e9f5" />
+
+            <LinearLayout
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:drawableLeft="@drawable/ic_bag"
+                        android:drawablePadding="5dp"
+                        android:text="Карьера"
+                        android:textStyle="bold"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/ic_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+                <TableLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TableRow
+                        android:layout_weight="1"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="Моя должность / \nпрофессия" />
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:id="@+id/professionTextView2"
+                            android:textAlignment="textEnd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="Профессиональная область" />
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:id="@+id/occupationTextView"
+                            android:textAlignment="textEnd"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Плюсы в моей работе" />
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:id="@+id/prosTextView"
+                            android:textAlignment="textEnd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Минусы в работе" />
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:id="@+id/consTextView"
+                            android:textAlignment="textEnd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Материальное положение" />
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:id="@+id/financeTextView"
+                            android:textAlignment="textEnd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#e9e9f5" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
+                android:background="#e9e9f5" />
+
+            <LinearLayout
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:drawableStart="@drawable/ic_book"
+                        android:drawablePadding="5dp"
+                        android:text="Любимые книги"
+                        android:textStyle="bold"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/ic_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+                <TableLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TableRow
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="Красношейка" />
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ю. Несбе" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="1984" />
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Джордж Оруэлл" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Скотный двор" />
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Джордж Оруэлл" />
+
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="#e9e9f5" />
+
+            <LinearLayout
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textColor="#c5c3d9"
+                            android:textAlignment="center"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="© 2018 LinkYou" />
+
+                        <TextView
+                            android:textColor="#c5c3d9"
+                            android:textAlignment="center"
+                            android:textStyle="bold"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginEnd="30dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Правила" />
+
+                        <TextView
+                            android:textColor="#c5c3d9"
+                            android:textAlignment="center"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Условия" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textColor="#c5c3d9"
+                            android:textStyle="bold"
+                            android:layout_marginEnd="20dp"
+                            android:textAlignment="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Техподдержка" />
+
+                        <TextView
+                            android:textColor="#c5c3d9"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Конфиденциальность" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:drawableStart="@drawable/ic_facebook_color1"
+                            android:drawablePadding="10dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="#c5c3d9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="990" />
+                        <TextView
+                            android:drawableStart="@drawable/ic_vk_color1"
+                            android:drawablePadding="10dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="#c5c3d9"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginStart="30dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="424" />
+                        <TextView
+                            android:drawableStart="@drawable/ic_ok_color1"
+                            android:drawablePadding="10dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="#c5c3d9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="308" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
