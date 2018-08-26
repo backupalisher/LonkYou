@@ -9,8 +9,11 @@ import android.text.SpannableString;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -21,7 +24,9 @@ import linkyou.ru.linkyou.R;
 import linkyou.ru.linkyou.api.LinkAPI;
 import linkyou.ru.linkyou.models.photos.user_gallery.UserGalleryData;
 import linkyou.ru.linkyou.models.users.user_id.UserDataJSON;
+import linkyou.ru.linkyou.ui.SupportActivity;
 import linkyou.ru.linkyou.ui.photos.PhotoActivity;
+import linkyou.ru.linkyou.ui.singin.RulesActivity;
 import linkyou.ru.linkyou.utils.CircularTransformation;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -56,9 +61,14 @@ public class UserPageActivity extends AppCompatActivity {
         final TextView goalTextView = (TextView) findViewById(R.id.goalTextView);
         final TextView photosCountTextView2 = (TextView) findViewById(R.id.photosCountTextView2);
 //        final TextView blogsCountTextView = (TextView)findViewById(R.id.blogsCountTextView);
+        final TextView giftsCountTextView = (TextView)findViewById(R.id.giftsCountTextView);
         final ImageView blogAccountImageView = (ImageView) findViewById(R.id.blogAccountImageView);
         final TextView blogAccountNameTextView = (TextView) findViewById(R.id.blogAccountNameTextView);
 //        final TextView blogDatesTextView = (TextView) findViewById(R.id.blogDatesTextView);
+        final WebView blogTextView = findViewById(R.id.blogText);
+        final TextView blogLikesTextView = (TextView) findViewById(R.id.blogLikesTextView);
+        final TextView comments_countTextView = (TextView) findViewById(R.id.comments_countTextView);
+        final TextView views_countTextView = (TextView) findViewById(R.id.views_countTextView);
         final TextView aboutTextView = (TextView) findViewById(R.id.aboutTextView);
         final TextView heightTextView = (TextView) findViewById(R.id.heightTextView);
         final TextView relationshipTextView = (TextView) findViewById(R.id.relationshipTextView);
@@ -73,7 +83,24 @@ public class UserPageActivity extends AppCompatActivity {
         final TextView prosTextView = (TextView) findViewById(R.id.prosTextView);
         final TextView consTextView = (TextView) findViewById(R.id.consTextView);
         final TextView financeTextView = (TextView) findViewById(R.id.financeTextView);
+        final TextView supportTextView = (TextView) findViewById(R.id.supportTextView);
+        final TextView rulesTextView = (TextView) findViewById(R.id.rulesTextView);
 
+        supportTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SupportActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        rulesTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), RulesActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         final LinkAPI linkAPI = LinkAPI.retrofit.create(LinkAPI.class);
@@ -147,11 +174,42 @@ public class UserPageActivity extends AppCompatActivity {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-//                    try {
-//                        blogDatesTextView.setText(userData.getBlogs().getLast().getLastUpdate());
-//                    } catch (Exception e) {
-//                        e.printStackTrace();
-//                    }
+
+                    try {
+                        giftsCountTextView.setText(userData.getGifts().getCount() + " Подарка");
+                        for (int i = 0; i < userData.getGifts().getItems().size(); i++) {
+                            LinearLayout giftsLayout = findViewById(R.id.giftsListLayout);
+                            ImageView giftsImageView = new ImageView(UserPageActivity.this);
+                            Picasso.with(UserPageActivity.this)
+                                    .load(userData.getGifts().getItems().get(i).getSrc())
+                                    .fit().centerCrop()
+                                    .into(giftsImageView);
+                            LinearLayout.LayoutParams imageViewLayoutParams = new LinearLayout.LayoutParams(100, 100);
+                            imageViewLayoutParams.setMargins(5,8,5,8);
+                            giftsImageView.setLayoutParams(imageViewLayoutParams);
+                            giftsLayout.addView(giftsImageView);
+                        }
+                    } catch (Exception e) {
+                        giftsCountTextView.setText("0 Подарка");
+                        e.printStackTrace();
+                    }
+
+                    try {
+                        blogLikesTextView.setText(userData.getUblogs().getLast().getLikesCount());
+                        comments_countTextView.setText(userData.getUblogs().getLast().getCommentsCount());
+                        views_countTextView.setText(userData.getUblogs().getLast().getViewsCount());
+                        if (!userData.getUblogs().getLast().getText().equals("")) {
+                            blogTextView.setVisibility(View.VISIBLE);
+                            blogTextView.getSettings().setJavaScriptEnabled(true);
+                            blogTextView.loadDataWithBaseURL(null,
+                                    userData.getUblogs().getLast().getText(),
+                                    "text/html",
+                                    "utf-8",
+                                    null);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
 
 
                     try {
@@ -308,25 +366,27 @@ public class UserPageActivity extends AppCompatActivity {
                     try {
                         if (userData.getInterests().getInterests() != null) {
                             for (int i = 0; i < response.body().getInterests().getInterests().size(); i++) {
-                                com.google.android.flexbox.FlexboxLayout interestsLayout = (com.google.android.flexbox.FlexboxLayout) findViewById(R.id.interestsLayout);
+                                if (!userData.getInterests().getInterests().get(i).toString().equals("")) {
+                                    com.google.android.flexbox.FlexboxLayout interestsLayout = (com.google.android.flexbox.FlexboxLayout) findViewById(R.id.interestsLayout);
 
-                                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                                TextView interestsTextView = new TextView(UserPageActivity.this);
+                                    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                                    TextView interestsTextView = new TextView(UserPageActivity.this);
 
-                                interestsTextView.setText(userData.getInterests().getInterests().get(i).toString());
-                                interestsTextView.setBackgroundResource(R.drawable.circle_button_gray);
-                                interestsTextView.setPadding(10,10,10,10);
-                                interestsTextView.setLayoutParams(params);
+                                    interestsTextView.setText(userData.getInterests().getInterests().get(i).toString());
+                                    interestsTextView.setBackgroundResource(R.drawable.circle_button_gray);
+                                    interestsTextView.setPadding(15,10,15,10);
+                                    interestsTextView.setLayoutParams(params);
 
-                                interestsLayout.addView(interestsTextView);
+                                    interestsLayout.addView(interestsTextView);
 
-                                TextView nullTextView = new TextView(UserPageActivity.this);
-                                nullTextView.setText("");
-                                nullTextView.setPadding(5,10,5,20);
-                                nullTextView.setLayoutParams(params);
+                                    TextView nullTextView = new TextView(UserPageActivity.this);
+                                    nullTextView.setText("");
+                                    nullTextView.setPadding(5,10,5,20);
+                                    nullTextView.setLayoutParams(params);
 
-                                interestsLayout.addView(nullTextView);
-
+                                    interestsLayout.addView(nullTextView);
+                                }
+//                                Log.e("mData", String.valueOf(response.body().getInterests().getInterests().size()));
                             }
 
                             alcoholTextView.setText(userData.getAlcohol().getName());
@@ -406,6 +466,37 @@ public class UserPageActivity extends AppCompatActivity {
                             financeTextView.setVisibility(View.GONE);
                         }
                     } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    try {
+                        LinearLayout booksLayout = findViewById(R.id.booksLayout);
+                        for (int i = 0; i < userData.getBooks().size(); i++) {
+
+//                            linearLayout.setOrientation(LinearLayout.HORIZONTAL);
+
+                            TextView booksNameText = new TextView(UserPageActivity.this);
+                            booksNameText.setText(userData.getBooks().get(i).getAuthor());
+                            RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//                            layoutParams.addRule(RelativeLayout.ALIGN_PARENT_START);
+                            booksNameText.setLayoutParams(layoutParams);
+
+                            TextView authorNameText = new TextView(UserPageActivity.this);
+                            authorNameText.setText(userData.getBooks().get(i).getName());
+                            RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                            layoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+                            authorNameText.setLayoutParams(layoutParams2);
+
+                            RelativeLayout relativeLayout = new RelativeLayout(getApplicationContext());
+                            relativeLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+                            relativeLayout.addView(booksNameText);
+                            relativeLayout.addView(authorNameText);
+//                            relativeLayout.setLayoutParams(layoutParams);
+                            booksLayout.addView(relativeLayout);
+                        }
+                    } catch (Exception e) {
+                        giftsCountTextView.setText("0 Подарка");
                         e.printStackTrace();
                     }
                 }

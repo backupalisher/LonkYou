@@ -9,9 +9,6 @@ public class Last{
 	@SerializedName("text_short")
 	private String textShort;
 
-	@SerializedName("sort")
-	private int sort;
-
 	@SerializedName("photos")
 	private List<Object> photos;
 
@@ -19,22 +16,19 @@ public class Last{
 	private List<Object> tags;
 
 	@SerializedName("likes_count")
-	private int likesCount;
+	private String likesCount;
+
+	@SerializedName("datetime")
+	private String datetime;
 
 	@SerializedName("video_link")
-	private Object videoLink;
-
-	@SerializedName("user_id")
-	private int userId;
+	private String videoLink;
 
 	@SerializedName("audio_link")
-	private Object audioLink;
+	private String audioLink;
 
 	@SerializedName("comments_count")
-	private int commentsCount;
-
-	@SerializedName("last_update")
-	private String lastUpdate;
+	private String commentsCount;
 
 	@SerializedName("id")
 	private int id;
@@ -43,13 +37,13 @@ public class Last{
 	private String text;
 
 	@SerializedName("views_count")
-	private int viewsCount;
+	private String viewsCount;
 
 	@SerializedName("user")
 	private User user;
 
 	@SerializedName("is_liked")
-	private int isLiked;
+	private boolean isLiked;
 
 	public void setTextShort(String textShort){
 		this.textShort = textShort;
@@ -57,14 +51,6 @@ public class Last{
 
 	public String getTextShort(){
 		return textShort;
-	}
-
-	public void setSort(int sort){
-		this.sort = sort;
-	}
-
-	public int getSort(){
-		return sort;
 	}
 
 	public void setPhotos(List<Object> photos){
@@ -83,52 +69,44 @@ public class Last{
 		return tags;
 	}
 
-	public void setLikesCount(int likesCount){
+	public void setLikesCount(String likesCount){
 		this.likesCount = likesCount;
 	}
 
-	public int getLikesCount(){
+	public String getLikesCount(){
 		return likesCount;
 	}
 
-	public void setVideoLink(Object videoLink){
+	public void setDatetime(String datetime){
+		this.datetime = datetime;
+	}
+
+	public String getDatetime(){
+		return datetime;
+	}
+
+	public void setVideoLink(String videoLink){
 		this.videoLink = videoLink;
 	}
 
-	public Object getVideoLink(){
+	public String getVideoLink(){
 		return videoLink;
 	}
 
-	public void setUserId(int userId){
-		this.userId = userId;
-	}
-
-	public int getUserId(){
-		return userId;
-	}
-
-	public void setAudioLink(Object audioLink){
+	public void setAudioLink(String audioLink){
 		this.audioLink = audioLink;
 	}
 
-	public Object getAudioLink(){
+	public String getAudioLink(){
 		return audioLink;
 	}
 
-	public void setCommentsCount(int commentsCount){
+	public void setCommentsCount(String commentsCount){
 		this.commentsCount = commentsCount;
 	}
 
-	public int getCommentsCount(){
+	public String getCommentsCount(){
 		return commentsCount;
-	}
-
-	public void setLastUpdate(String lastUpdate){
-		this.lastUpdate = lastUpdate;
-	}
-
-	public String getLastUpdate(){
-		return lastUpdate;
 	}
 
 	public void setId(int id){
@@ -147,11 +125,11 @@ public class Last{
 		return text;
 	}
 
-	public void setViewsCount(int viewsCount){
+	public void setViewsCount(String viewsCount){
 		this.viewsCount = viewsCount;
 	}
 
-	public int getViewsCount(){
+	public String getViewsCount(){
 		return viewsCount;
 	}
 
@@ -163,11 +141,11 @@ public class Last{
 		return user;
 	}
 
-	public void setIsLiked(int isLiked){
+	public void setIsLiked(boolean isLiked){
 		this.isLiked = isLiked;
 	}
 
-	public int getIsLiked(){
+	public boolean isIsLiked(){
 		return isLiked;
 	}
 }

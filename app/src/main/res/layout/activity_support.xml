@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/supportLayout"
+    android:background="#fff"
+    tools:context=".ui.SupportActivity">
+
+    <EditText
+        android:id="@+id/headLine"
+        android:hint="Суть проблемы"
+        android:background="@drawable/rectangle_rounded_cian"
+        android:padding="10dp"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:background="#ebf3fd"
+        android:layout_below="@+id/headLine"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/textLayout"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="80dp"
+            android:orientation="vertical">
+            <EditText
+                android:background="@drawable/rectangle_rounded_white"
+
+                android:hint="Опишите, пожалуйста, вашу проблему"
+                android:layout_margin="20dp"
+                android:padding="7dp"
+                android:gravity="start"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <Button
+            android:text="Отправить"
+            android:textAllCaps="false"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:paddingHorizontal="40dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/rectangle_rounded_blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

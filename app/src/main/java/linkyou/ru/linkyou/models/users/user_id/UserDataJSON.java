@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class UserDataJSON{
+public class UserDataJSON {
 
 	@SerializedName("birthday")
 	private Birthday birthday;
@@ -76,7 +76,7 @@ public class UserDataJSON{
 	private Orientation orientation;
 
 	@SerializedName("ublogs_count")
-	private String ublogsCount;
+	private int ublogsCount;
 
 	@SerializedName("goal")
 	private Goal goal;
@@ -94,7 +94,7 @@ public class UserDataJSON{
 	private boolean isVip;
 
 	@SerializedName("weight")
-	private String weight;
+	private int weight;
 
 	@SerializedName("is_blacklisted")
 	private boolean isBlacklisted;
@@ -319,11 +319,11 @@ public class UserDataJSON{
 		return orientation;
 	}
 
-	public void setUblogsCount(String ublogsCount){
+	public void setUblogsCount(int ublogsCount){
 		this.ublogsCount = ublogsCount;
 	}
 
-	public String getUblogsCount(){
+	public int getUblogsCount(){
 		return ublogsCount;
 	}
 
@@ -367,11 +367,11 @@ public class UserDataJSON{
 		return isVip;
 	}
 
-	public void setWeight(String weight){
+	public void setWeight(int weight){
 		this.weight = weight;
 	}
 
-	public String getWeight(){
+	public int getWeight(){
 		return weight;
 	}
 

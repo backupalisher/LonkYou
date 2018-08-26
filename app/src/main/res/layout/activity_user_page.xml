@@ -121,7 +121,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
                     android:layout_weight="4"
-                    android:background="@drawable/circle_button_cian"
+                    android:background="@drawable/rectangle_rounded_cian"
                     android:text="Поднять анкету"
                     android:drawablePadding="-10dp"/>
 
@@ -135,8 +135,7 @@
                     android:layout_marginRight="10dp"
                     android:paddingLeft="20dp"
                     android:drawableLeft="@drawable/ic_crown"
-                    android:background="@drawable/circle_button_cian"
-
+                    android:background="@drawable/rectangle_rounded_cian"
                     android:drawablePadding="-10dp"/>
 
                 <ImageButton
@@ -385,11 +384,67 @@
                 android:layout_marginTop="20dp"
                 android:background="#e9e9f5" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:background="#e9e9f5" />
+
             <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <TextView
+                    android:id="@+id/giftsCountTextView"
+                    android:text=""
+                    android:drawableStart="@drawable/ic_present"
+                    android:drawablePadding="5dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:id="@+id/giftsListLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:background="#e9e9f5" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:background="#e9e9f5" />
+
             <LinearLayout
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
@@ -437,18 +492,11 @@
                         android:layout_height="wrap_content" />
                 </RelativeLayout>
 
-                <TextView
+                <WebView
+                    android:visibility="gone"
                     android:id="@+id/blogText"
-                    android:text="Съездил с друзьями в горы. В будущем планирую проводить отпуск только так. Представьте себе: просыпаешься, выходишь из палатки и вдыхаешь свежайший воздух, а взглянув вниз, кажется, видишь целый мир."
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
-
-                <ImageView
-                    android:src="@drawable/blog_img"
-                    android:scaleType="fitCenter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="TODO" />
 
                 <View
                     android:layout_width="match_parent"
@@ -468,23 +516,22 @@
                         android:drawableLeft="@drawable/ic_heart2"
                         android:drawablePadding="5dp"
                         android:layout_marginEnd="20dp"
-                        android:text="10 лайков"
                         android:layout_centerVertical="true"
                         android:gravity="center_vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <TextView
+                        android:id="@+id/comments_countTextView"
                         android:drawableLeft="@drawable/ic_comments2"
                         android:drawablePadding="5dp"
                         android:layout_toRightOf="@id/blogLikesTextView"
-                        android:text="2 комментария"
                         android:gravity="center_vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <TextView
+                        android:id="@+id/views_countTextView"
                         android:drawableLeft="@drawable/ic_eye"
                         android:drawablePadding="5dp"
-                        android:text="95"
                         android:layout_alignParentEnd="true"
                         android:gravity="center_vertical"
                         android:layout_width="wrap_content"
@@ -498,9 +545,7 @@
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/circle_button_cian"
-                    style="?android:textAppearanceSmall"
-                    android:drawablePadding="-10dp"
+                    android:background="@drawable/rectangle_rounded_cian"
                     android:textAllCaps="false"
                     android:text="Все записи" />
             </LinearLayout>
@@ -544,7 +589,6 @@
                 </RelativeLayout>
                 <TextView
                     android:id="@+id/aboutTextView"
-                    android:text="Люблю красивую музыку и прогулки на свежем воздухе, катаюсь с друзьями на скейтах, хажу на хокей а по выходным обязательно хожу в любимый кинотеатр."
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -1053,73 +1097,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </RelativeLayout>
-
-                <TableLayout
-                    android:layout_marginTop="20dp"
+                <LinearLayout
+                    android:id="@+id/booksLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                    <TableRow
-                        android:layout_marginBottom="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" >
 
-                        <TextView
-                            android:layout_weight="1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textStyle="bold"
-                            android:text="Красношейка" />
 
-                        <TextView
-                            android:layout_weight="1"
-                            android:textAlignment="textEnd"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Ю. Несбе" />
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_marginBottom="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" >
-
-                        <TextView
-                            android:layout_weight="1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textStyle="bold"
-                            android:text="1984" />
-
-                        <TextView
-                            android:layout_weight="1"
-                            android:textAlignment="textEnd"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="Джордж Оруэлл" />
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_marginBottom="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" >
-
-                        <TextView
-                            android:layout_weight="1"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Скотный двор" />
-
-                        <TextView
-                            android:layout_weight="1"
-                            android:textAlignment="textEnd"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Джордж Оруэлл" />
-
-                    </TableRow>
-                </TableLayout>
+                </LinearLayout>
             </LinearLayout>
 
             <View
@@ -1177,6 +1163,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/supportTextView"
                             android:textColor="#c5c3d9"
                             android:textStyle="bold"
                             android:layout_marginEnd="20dp"
@@ -1186,6 +1173,7 @@
                             android:text="Техподдержка" />
 
                         <TextView
+                            android:id="@+id/rulesTextView"
                             android:textColor="#c5c3d9"
                             android:textStyle="bold"
                             android:textAlignment="center"

@@ -46,7 +46,8 @@
         <activity android:name=".ui.photos.PhotoCommentsActivity" />
         <activity android:name=".ui.users.GuestsActivity" />
         <activity android:name=".ui.users.FavoritesActivity" />
-        <activity android:name=".ui.users.TopActivity"></activity>
+        <activity android:name=".ui.users.TopActivity" />
+        <activity android:name=".ui.SupportActivity"></activity>
     </application>
 
 </manifest>

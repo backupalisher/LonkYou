@@ -2,15 +2,15 @@ package linkyou.ru.linkyou.api;
 
 import java.util.List;
 
+import linkyou.ru.linkyou.models.photos.photo_comments.PhotoCommentsData;
+import linkyou.ru.linkyou.models.photos.user_gallery.UserGalleryData;
+import linkyou.ru.linkyou.models.photos.user_photo.UserPhotoData;
 import linkyou.ru.linkyou.models.users.favorites.FavoritesData;
 import linkyou.ru.linkyou.models.users.guests.GuestsData;
 import linkyou.ru.linkyou.models.users.top.TopData;
 import linkyou.ru.linkyou.models.users.user_current.UserCurrentData;
 import linkyou.ru.linkyou.models.users.user_id.UserDataJSON;
 import linkyou.ru.linkyou.models.users.users_daily.UsersDailyData;
-import linkyou.ru.linkyou.models.photos.photo_comments.PhotoCommentsData;
-import linkyou.ru.linkyou.models.photos.user_gallery.UserGalleryData;
-import linkyou.ru.linkyou.models.photos.user_photo.UserPhotoData;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

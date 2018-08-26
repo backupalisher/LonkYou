@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 public class Birthday{
 
 	@SerializedName("age")
-	private int age;
+	private String age;
 
 	@SerializedName("date")
 	private String date;
@@ -13,11 +13,11 @@ public class Birthday{
 	@SerializedName("zodiac")
 	private Zodiac zodiac;
 
-	public void setAge(int age){
+	public void setAge(String age){
 		this.age = age;
 	}
 
-	public int getAge(){
+	public String getAge(){
 		return age;
 	}
 

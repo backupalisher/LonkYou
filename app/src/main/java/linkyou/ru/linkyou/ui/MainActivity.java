@@ -35,6 +35,7 @@ import linkyou.ru.linkyou.ui.singin.PromoActivity;
 import linkyou.ru.linkyou.ui.users.FavoritesActivity;
 import linkyou.ru.linkyou.ui.users.GuestsActivity;
 import linkyou.ru.linkyou.ui.users.TopActivity;
+import linkyou.ru.linkyou.ui.users.UserPageActivity;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -137,6 +138,10 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         } else if (id == R.id.nav_top) {
             Intent intent = new Intent(getApplicationContext(), TopActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_edit_account) {
+            Intent intent = new Intent(getApplicationContext(), UserPageActivity.class);
+            intent.putExtra("id", "2");
             startActivity(intent);
         }
 

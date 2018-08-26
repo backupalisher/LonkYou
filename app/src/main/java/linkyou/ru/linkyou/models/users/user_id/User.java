@@ -10,11 +10,14 @@ public class User{
 	@SerializedName("role")
 	private int role;
 
-	@SerializedName("is_premium")
-	private boolean isPremium;
-
 	@SerializedName("is_vip")
 	private boolean isVip;
+
+	@SerializedName("avatar")
+	private Avatar avatar;
+
+	@SerializedName("is_premium")
+	private boolean isPremium;
 
 	@SerializedName("name")
 	private String name;
@@ -25,9 +28,6 @@ public class User{
 	@SerializedName("id")
 	private int id;
 
-	@SerializedName("avatar")
-	private Avatar avatar;
-
 	@SerializedName("is_top100")
 	private boolean isTop100;
 
@@ -36,6 +36,9 @@ public class User{
 
 	@SerializedName("job")
 	private Job job;
+
+	@SerializedName("likes")
+	private Likes likes;
 
 	@SerializedName("photos_count")
 	private int photosCount;
@@ -56,20 +59,28 @@ public class User{
 		return role;
 	}
 
-	public void setIsPremium(boolean isPremium){
-		this.isPremium = isPremium;
-	}
-
-	public boolean isIsPremium(){
-		return isPremium;
-	}
-
 	public void setIsVip(boolean isVip){
 		this.isVip = isVip;
 	}
 
 	public boolean isIsVip(){
 		return isVip;
+	}
+
+	public void setAvatar(Avatar avatar){
+		this.avatar = avatar;
+	}
+
+	public Avatar getAvatar(){
+		return avatar;
+	}
+
+	public void setIsPremium(boolean isPremium){
+		this.isPremium = isPremium;
+	}
+
+	public boolean isIsPremium(){
+		return isPremium;
 	}
 
 	public void setName(String name){
@@ -96,14 +107,6 @@ public class User{
 		return id;
 	}
 
-	public void setAvatar(Avatar avatar){
-		this.avatar = avatar;
-	}
-
-	public Avatar getAvatar(){
-		return avatar;
-	}
-
 	public void setIsTop100(boolean isTop100){
 		this.isTop100 = isTop100;
 	}
@@ -126,6 +129,14 @@ public class User{
 
 	public Job getJob(){
 		return job;
+	}
+
+	public void setLikes(Likes likes){
+		this.likes = likes;
+	}
+
+	public Likes getLikes(){
+		return likes;
 	}
 
 	public void setPhotosCount(int photosCount){

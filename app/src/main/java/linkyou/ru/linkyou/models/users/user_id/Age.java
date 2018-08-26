@@ -5,24 +5,24 @@ import com.google.gson.annotations.SerializedName;
 public class Age{
 
 	@SerializedName("from")
-	private int from;
+	private String from;
 
 	@SerializedName("to")
-	private int to;
+	private String to;
 
-	public void setFrom(int from){
+	public void setFrom(String from){
 		this.from = from;
 	}
 
-	public int getFrom(){
+	public String getFrom(){
 		return from;
 	}
 
-	public void setTo(int to){
+	public void setTo(String to){
 		this.to = to;
 	}
 
-	public int getTo(){
+	public String getTo(){
 		return to;
 	}
 }
